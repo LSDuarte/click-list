@@ -6,35 +6,121 @@
 	<artifactId>click-list</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
-	
+
 	<properties>
+		<!-- Codificação dos caracteres -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Mojarra JSF -->
+		<mojarra.version>2.2.13</mojarra.version>
+
+		<!-- Weld CDI -->
+		<weld-servlet.version>2.3.5.Final</weld-servlet.version>
+
+		<!-- PrimeFaces -->
+		<primefaces.version>7.0</primefaces.version>
+
+		<!-- PrimeFaces Bootstrap -->
+		<bootstrap-theme.version>1.0.10</bootstrap-theme.version>
+
+		<!-- OmniFaces -->
+		<ominifaces.version>2.4</ominifaces.version>
+
+		<!-- mySQL JDBC Driver -->
+		<mysql.version>8.0.25</mysql.version>
+		
+		<!-- Hibernate -->
+		<hibernate.version>5.2.3.Final</hibernate.version>
+		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+
+		<!-- Joda-Time -->
+		<joda-time.version>2.9.4</joda-time.version>
+
+		<!-- JUnit -->
+		<junit.version>4.12</junit.version>
+		
 	</properties>
-	
+
 	<dependencies>
+		<!-- Mojarra JSF -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
-			<version>2.2.10</version>
+			<version>${mojarra.version}</version>
 			<scope>compile</scope>
 		</dependency>
+
+		<!-- Weld CDI -->
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
-			<version>2.2.0.Final</version>
+			<version>${weld-servlet.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.jboss</groupId>
-			<artifactId>jandex</artifactId>
-			<version>1.2.3.Final</version>
-			<scope>compile</scope>
-		</dependency>
+
+		<!-- PrimeFaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>7.0</version>
+			<version>${primefaces.version}</version>
 		</dependency>
+
+		<!-- Tema Prime | Bootstrap -->
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>${bootstrap-theme.version}</version>
+		</dependency>
+
+		<!-- OmniFaces -->
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<version>${ominifaces.version}</version>
+		</dependency>
+
+		<!-- mySQL JDBC Driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- Joda-Time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time.version}</version>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+
+		<!-- JUnity -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+		
 	</dependencies>
+
+	<!-- Google repo -->
+	<repositories>
+		<repository>
+			<id>spring-repo</id>
+			<url>https://maven.google.com/</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
